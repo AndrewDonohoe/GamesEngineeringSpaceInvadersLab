@@ -77,4 +77,12 @@ void Player::update(const float& dt) {
 		direction++;
 	}
 	move(sf::Vector2f(direction * p::player_speed * dt, 0.f));
+
+	const float pos = getPosition().x;
+	if ((pos + (p::sprite_size * 0.5)) > p::game_width) { //left wall
+		move(sf::Vector2f(-2.5f, 0.f));
+	}
+	else if (pos - (p::sprite_size * 0.5) < 0) { //right wall
+		move(sf::Vector2f(2.5f, 0.f));
+	}
 }
