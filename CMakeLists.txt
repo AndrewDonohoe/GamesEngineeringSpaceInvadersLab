@@ -21,7 +21,7 @@ add_custom_target(copy_resources ALL COMMAND ${CMAKE_COMMAND}
 )
 
 #### Practical 1 ####
-add_executable(space_invaders main.cpp)
+add_executable(space_invaders main.cpp Ship.cpp game_system.cpp)
 target_include_directories(space_invaders PRIVATE ${SFML_INCS})
 target_link_libraries(space_invaders sfml-graphics)
 
